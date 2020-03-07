@@ -1,15 +1,9 @@
-FROM golang:1.10 AS build
-WORKDIR /go/src
-COPY go ./go
-COPY main.go .
+FROM golang:1.14
 
-ENV CGO_ENABLED=0
-RUN go get -d -v ./...
+WORKDIR /go/src/VehicleService
+COPY . .
 
-RUN go build -a -installsuffix cgo -o openapi .
+RUN go get -d -v ./
+RUN go install -v ./
 
-FROM scratch AS runtime
-ENV GIN_MODE=release
-COPY --from=build /go/src/openapi ./
-EXPOSE 8080/tcp
-ENTRYPOINT ["./openapi"]
+CMD ["vehicleservice"]
