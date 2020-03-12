@@ -100,7 +100,7 @@ func putVehicle(c *gin.Context) {
 		vehicle.RoadTaxExpiry = vehicleUpdate.RoadTaxExpiry
 	}
 
-	if vehicleUpdate.Registration != nil {
+	if vehicleUpdate.Registration != "" {
 		vehicle.Registration = vehicleUpdate.Registration
 	}
 

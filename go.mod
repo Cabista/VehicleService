@@ -11,5 +11,6 @@ require (
 	github.com/pborman/uuid v1.2.0
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/sony/sonyflake v1.0.0
+	github.com/spf13/viper v1.6.2
 	gopkg.in/evanphx/json-patch.v4 v4.5.0
 )

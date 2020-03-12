@@ -8,8 +8,8 @@ import (
 )
 
 func RegisterVehicleTypeController(group *gin.RouterGroup) {
-	group.POST("/", createVehicle)
-	group.PUT("/:ID", putVehicle)
+	group.POST("/", createVehicleType)
+	group.PUT("/:ID", putVehicleType)
 	group.GET("/:ID", getVehicleType)
 }
 
